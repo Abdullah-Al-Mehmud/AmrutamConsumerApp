@@ -21,6 +21,10 @@ const NAV_LINKS = [
     path: "/commune",
   },
   {
+    name: "Questionnaire",
+    path: "/questionnaire",
+  },
+  {
     name: "About Us",
     path: "/about",
   },
@@ -52,7 +56,7 @@ const Navbar = () => {
                             <NavLink to={item.path} key={item.path}>
                               {({ isActive }) => (
                                 <li
-                                  className={`${isActive ? "text-[22px] font-semibold text-[#3a643b]" : "text-[20px]"} group relative cursor-pointer font-poppins capitalize duration-100 active:scale-95`}
+                                  className={`${isActive ? "text-[22px] font-semibold text-[#3a643b]" : "text-[20px]"} group relative cursor-pointer capitalize duration-100 active:scale-95`}
                                 >
                                   <span className="whitespace-nowrap leading-[140%]">
                                     {item.name}
@@ -61,7 +65,7 @@ const Navbar = () => {
                                     className={`${isActive ? `bg-[#3a643b] group-hover:max-w-full` : "bg-neutral-700 group-hover:max-w-[88%]"} block h-[2.5px] max-w-0 whitespace-nowrap rounded-full transition-all duration-500 ease-in-out`}
                                   ></span>
                                   {/* Invisible pseudo-element to maintain space */}
-                                  <span className="p0 invisible relative block h-0 text-[22px] font-bold">
+                                  <span className="p0 invisible relative block h-0 text-[18px] font-bold">
                                     {item.name}
                                   </span>
                                 </li>
@@ -71,10 +75,10 @@ const Navbar = () => {
                         </ul>
                       </nav>
                       <div className="flex gap-4 lg:ml-2">
-                        <button className="bg-oldlace rounded-xl border-2 border-customgreen-800 px-8 pb-3 pt-2 font-poppins text-2xl text-[#3a643b] transition duration-100 ease-in-out hover:-translate-y-0.5 hover:border-customgreen-700 hover:text-customgreen-700 active:scale-90">
+                        <button className="bg-oldlace font-poppins rounded-xl border-2 border-[#3a643b] px-8 py-3 text-lg text-[#3a643b] transition duration-100 ease-in-out hover:-translate-y-0.5 hover:border-green-700 hover:text-green-700 active:scale-90">
                           Login
                         </button>
-                        <button className="whitespace-nowrap rounded-xl bg-[#3a643b] px-8 pb-3 pt-2 font-poppins text-2xl text-white transition delay-75 duration-100 ease-in-out hover:-translate-y-0.5 hover:bg-customgreen-700 active:scale-90">
+                        <button className="font-poppins whitespace-nowrap rounded-xl bg-[#3a643b] px-8 py-3 text-lg text-white transition delay-75 duration-100 ease-in-out hover:-translate-y-0.5 hover:bg-green-700 active:scale-90">
                           Sign-Up
                         </button>
                       </div>
@@ -140,7 +144,7 @@ const Navbar = () => {
                       <NavLink to={item.path} key={item.path}>
                         {({ isActive }) => (
                           <DisclosureButton
-                            className={`w-full text-left font-poppins ${isActive ? `font-semibold text-[#3a643b]` : "text-neutral-700"} block rounded-md px-7 py-2 text-lg capitalize hover:text-black`}
+                            className={`font-poppins w-full text-left ${isActive ? `font-semibold text-[#3a643b]` : "text-neutral-700"} block rounded-md px-7 py-2 text-lg capitalize hover:text-black`}
                           >
                             {item.name}
                           </DisclosureButton>
@@ -148,10 +152,10 @@ const Navbar = () => {
                       </NavLink>
                     ))}
                     <div className="ml-7 flex gap-2 pt-3">
-                      <DisclosureButton className="bg-oldlace block w-28 rounded-lg border-2 border-customgreen-800 px-1.5 pb-2 pt-1 font-poppins text-xl text-[#3a643b]">
+                      <DisclosureButton className="bg-oldlace border-customgreen-800 font-poppins block w-28 rounded-lg border-2 px-1.5 pb-2 pt-1 text-xl text-[#3a643b]">
                         Login
                       </DisclosureButton>
-                      <DisclosureButton className="block w-28 rounded-lg bg-[#3a643b] px-1.5 pb-2 pt-1 font-poppins text-xl text-white">
+                      <DisclosureButton className="font-poppins block w-28 rounded-lg bg-[#3a643b] px-1.5 pb-2 pt-1 text-xl text-white">
                         Sign-Up
                       </DisclosureButton>
                     </div>
