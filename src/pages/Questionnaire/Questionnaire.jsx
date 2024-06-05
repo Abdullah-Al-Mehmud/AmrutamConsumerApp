@@ -1,4 +1,4 @@
-import ListOfCards from "./ListOfCards";
+import ListOfCards from "./Cards/ListOfCards";
 import QuestionnaireHero from "./QuestionnaireHero";
 import WhyQuestionnaire from "./WhyQuestionnaire";
 
