@@ -4,71 +4,71 @@ const ListOfCards = () => {
   const cards = [
     {
       title: "Ayurvedic Lifestyle and Health",
-      plays: 189,
-      likes: 228,
+      plays: 18,
+      likes: 22,
       author: "By Amrutam",
       imgSrc: "https://i.ibb.co/BzjQsYk/cardImg1.png",
     },
     {
       title: "Mental Health Self Assessment",
-      plays: 143,
-      likes: 223,
+      plays: 14,
+      likes: 22,
       author: "By: Aryan Khan",
       imgSrc: "https://i.ibb.co/k0Frs9v/cardImg2.png",
     },
     {
       title: "Skin Care Self Assessment",
-      plays: 189,
-      likes: 228,
+      plays: 18,
+      likes: 22,
       author: "By Amrutam",
       imgSrc: "https://i.ibb.co/JjBdf3s/cardImg3.png",
     },
     {
       title: "Skin Care Self Assessment",
-      plays: 189,
-      likes: 228,
+      plays: 18,
+      likes: 22,
       author: "By Amrutam",
       imgSrc: "https://i.ibb.co/L1RRTWL/cardImg4.png",
     },
     {
       title: "Skin Care Self Assessment",
-      plays: 189,
-      likes: 228,
+      plays: 18,
+      likes: 22,
       author: "By Amrutam",
       imgSrc: "https://i.ibb.co/BzjQsYk/cardImg1.png",
     },
     {
       title: "Skin Care Self Assessment",
-      plays: 189,
-      likes: 228,
+      plays: 18,
+      likes: 22,
       author: "By Amrutam",
       imgSrc: "https://i.ibb.co/k0Frs9v/cardImg2.png",
     },
     {
       title: "Skin Care Self Assessment",
-      plays: 189,
-      likes: 228,
+      plays: 18,
+      likes: 22,
       author: "By Amrutam",
       imgSrc: "https://i.ibb.co/L1RRTWL/cardImg4.png",
     },
     {
       title: "Skin Care Self Assessment",
-      plays: 189,
-      likes: 228,
+      plays: 18,
+      likes: 22,
       author: "By Amrutam",
       imgSrc: "https://i.ibb.co/BzjQsYk/cardImg1.png",
     },
     {
       title: "Skin Care Self Assessment",
-      plays: 189,
-      likes: 228,
+      plays: 18,
+      likes: 22,
       author: "By Amrutam",
       imgSrc: "https://i.ibb.co/JjBdf3s/cardImg3.png",
     },
     {
       title: "Skin Care Self Assessment",
-      plays: 189,
-      likes: 228,
+      plays: 18,
+      likes: 22,
       author: "By Amrutam",
       imgSrc: "https://i.ibb.co/L1RRTWL/cardImg4.png",
     },
@@ -79,8 +79,8 @@ const ListOfCards = () => {
         {/* filters */}
         <div>
           <h1 className="text-xl font-medium">Explore</h1>
-          <div className="flex flex-wrap space-x-3 mt-4 ">
-            <button className="bg-[#e7f5e7] text-green-600 font-semibold py-2 px-4 rounded-full">
+          <div className="lg:space-y-0 space-y-3 space-x-3 mt-4 ">
+            <button className="bg-[#e7f5e7] text-green-600 font-semibold   rounded-full py-2 px-5">
               All
             </button>
             <button className="border-[1.5px] border-[#d1d1d1] text-[#8e8e8e] font-semibold py-2 px-4 rounded-full">
