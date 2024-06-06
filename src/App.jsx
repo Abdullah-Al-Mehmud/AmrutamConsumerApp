@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Questionnaire from "./pages/Questionnaire/Questionnaire";
 import QuestionnaireSingleCard from "./pages/Questionnaire/Cards/QuestionnaireSingleCard/QuestionnaireSingleCard";
 import SelfAssessmentQuestions from "./pages/Questionnaire/Cards/QuestionnaireSingleCard/SelfAssessmentQuestions/SelfAssessmentQuestions";
+import SelfAssessmentResult from "./pages/Questionnaire/Cards/QuestionnaireSingleCard/SelfAssessmentQuestions/SelfAssessmentResult";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/selfAssessmentQuestions",
     element: <SelfAssessmentQuestions />,
+  },
+  {
+    path: "/selfAssessmentResult",
+    element: <SelfAssessmentResult />,
   },
 ]);
 

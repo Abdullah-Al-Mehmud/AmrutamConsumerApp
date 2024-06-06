@@ -4,7 +4,7 @@ import play from "../../../../assets/playWithbg.png";
 import { NavLink } from "react-router-dom";
 
 const AyurvedaCards = ({ cardDetails }) => {
-  const { imgSrc, title, plays, likes, aythor } = cardDetails;
+  const { imgSrc, title, plays, likes } = cardDetails;
   return (
     <div className="flex justify-center items-center border-[1.5px] border-gray-200 py-10 md:mx-28 mx-10 my-10 rounded-xl ">
       <div className="p-10 rounded-lg overflow-hidden lg:flex ">
@@ -49,6 +49,8 @@ const AyurvedaCards = ({ cardDetails }) => {
   );
 };
 
-AyurvedaCards.propTypes = {};
+AyurvedaCards.propTypes = {
+  cardDetails: PropTypes.object,
+};
 
 export default AyurvedaCards;
