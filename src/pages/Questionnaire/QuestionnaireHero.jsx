@@ -28,7 +28,12 @@ const QuestionnaireHero = () => {
                 type="text"
                 placeholder="Select Questionnaire Type"
                 className="md:mt-4 mt-2 px-5 lg:w-60 w-72 text-gray-400 py-[8px] md:text-sm text-xs rounded-lg outline-none border-[1.5px] border-[#cdcdcd]">
-                <option value="">Select Questionnaire Type</option>
+                <option disabled defaultValue>
+                  Select Questionnaire Type
+                </option>
+                <option value="All">All</option>
+                <option value="Self Assessment">Self Assessment</option>
+                <option value="Trivia">Trivia</option>
               </select>
             </div>
           </div>

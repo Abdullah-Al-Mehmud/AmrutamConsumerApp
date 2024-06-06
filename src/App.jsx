@@ -6,6 +6,7 @@ import FindDoctors from "./pages/FindDoctors";
 import About from "./pages/About";
 import Questionnaire from "./pages/Questionnaire/Questionnaire";
 import QuestionnaireSingleCard from "./pages/Questionnaire/Cards/QuestionnaireSingleCard/QuestionnaireSingleCard";
+import SelfAssessmentQuestions from "./pages/Questionnaire/Cards/QuestionnaireSingleCard/SelfAssessmentQuestions/SelfAssessmentQuestions";
 
 const router = createBrowserRouter([
   {
@@ -31,12 +32,17 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+
       {
         path: "/questionnaireSingleCard/:id",
         element: <QuestionnaireSingleCard />,
         loader: () => fetch("/QuestionnaireCards.json"),
       },
     ],
+  },
+  {
+    path: "/selfAssessmentQuestions",
+    element: <SelfAssessmentQuestions />,
   },
 ]);
 

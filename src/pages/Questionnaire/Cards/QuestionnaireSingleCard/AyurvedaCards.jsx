@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import like from "../../../../assets/likeWithbg.png";
 import play from "../../../../assets/playWithbg.png";
+import { NavLink } from "react-router-dom";
 
 const AyurvedaCards = ({ cardDetails }) => {
   const { imgSrc, title, plays, likes, aythor } = cardDetails;
@@ -19,24 +20,28 @@ const AyurvedaCards = ({ cardDetails }) => {
             on your journey to balance and harmony.
           </p>
 
-          <div className="md:flex gap-5 items-center justify-center md:mx-32 mx-20 py-3 rounded-xl mt-10 border-[1.5px] border-[#f3f3f3] ">
-            <div className="flex items-center text-gray-600">
-              <img src={like} alt="" />
+          <div className="md:flex gap-5 items-center justify-center  lg:mx-36 mx-20 py-4 rounded-xl mt-10 border-[1.5px] border-[#f3f3f3] ">
+            <div className="flex items-center justify-center text-gray-600">
+              <img src={play} alt="" />
               <div>
-                likes
-                <p>{plays} </p>
+                <p className="ml-2 text-gray-400 text-sm">Plays</p>
+                <p className="text-black font-semibold mt-1">{plays} </p>
               </div>
             </div>
-            <div className="flex items-center text-gray-600 ml-4">
+            <div className="flex items-center justify-center text-gray-600 md:ml-4 md:mt-0 mt-4">
               <img src={like} alt="" />
-              <div></div>
-              <p>{likes} </p>
+              <div>
+                <p className="ml-2 text-gray-400 text-sm">Likes</p>
+                <p className="text-black font-semibold mt-1">{likes} </p>
+              </div>
             </div>
           </div>
           <div className="mt-14">
-            <button className=" bg-[#3a643b] text-white font-semibold py-3 md:px-36 px-24 rounded-lg  whitespace-nowrap">
-              Play Now
-            </button>
+            <NavLink to="/selfAssessmentQuestions">
+              <button className=" bg-[#3a643b] text-white font-semibold py-3 md:px-36 px-24 rounded-lg  whitespace-nowrap">
+                Play Now
+              </button>
+            </NavLink>
           </div>
         </div>
       </div>
