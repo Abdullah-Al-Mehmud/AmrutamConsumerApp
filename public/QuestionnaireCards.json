@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Ayurvedic Lifestyle and Health",
+    "plays": 18,
+    "likes": 22,
+    "author": "By Amrutam",
+    "imgSrc": "https://i.ibb.co/BzjQsYk/cardImg1.png"
+  },
+  {
+    "id": 2,
+    "title": "Mental Health Self Assessment",
+    "plays": 14,
+    "likes": 22,
+    "author": "By: Aryan Khan",
+    "imgSrc": "https://i.ibb.co/k0Frs9v/cardImg2.png"
+  },
+  {
+    "id": 3,
+    "title": "Skin Care Self Assessment",
+    "plays": 18,
+    "likes": 22,
+    "author": "By Amrutam",
+    "imgSrc": "https://i.ibb.co/JjBdf3s/cardImg3.png"
+  },
+  {
+    "id": 4,
+    "title": "Skin Care Self Assessment",
+    "plays": 18,
+    "likes": 22,
+    "author": "By Amrutam",
+    "imgSrc": "https://i.ibb.co/L1RRTWL/cardImg4.png"
+  },
+  {
+    "id": 5,
+    "title": "Skin Care Self Assessment",
+    "plays": 18,
+    "likes": 22,
+    "author": "By Amrutam",
+    "imgSrc": "https://i.ibb.co/BzjQsYk/cardImg1.png"
+  },
+  {
+    "id": 6,
+    "title": "Skin Care Self Assessment",
+    "plays": 18,
+    "likes": 22,
+    "author": "By Amrutam",
+    "imgSrc": "https://i.ibb.co/k0Frs9v/cardImg2.png"
+  },
+  {
+    "id": 7,
+    "title": "Skin Care Self Assessment",
+    "plays": 18,
+    "likes": 22,
+    "author": "By Amrutam",
+    "imgSrc": "https://i.ibb.co/L1RRTWL/cardImg4.png"
+  },
+  {
+    "id": 8,
+    "title": "Skin Care Self Assessment",
+    "plays": 18,
+    "likes": 22,
+    "author": "By Amrutam",
+    "imgSrc": "https://i.ibb.co/BzjQsYk/cardImg1.png"
+  },
+  {
+    "id": 9,
+    "title": "Skin Care Self Assessment",
+    "plays": 18,
+    "likes": 22,
+    "author": "By Amrutam",
+    "imgSrc": "https://i.ibb.co/JjBdf3s/cardImg3.png"
+  },
+  {
+    "id": 10,
+    "title": "Skin Care Self Assessment",
+    "plays": 18,
+    "likes": 22,
+    "author": "By Amrutam",
+    "imgSrc": "https://i.ibb.co/L1RRTWL/cardImg4.png"
+  }
+]

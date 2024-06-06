@@ -1,78 +1,14 @@
+import { useEffect, useState } from "react";
 import Cards from "./Cards";
 
 const ListOfCards = () => {
-  const cards = [
-    {
-      title: "Ayurvedic Lifestyle and Health",
-      plays: 18,
-      likes: 22,
-      author: "By Amrutam",
-      imgSrc: "https://i.ibb.co/BzjQsYk/cardImg1.png",
-    },
-    {
-      title: "Mental Health Self Assessment",
-      plays: 14,
-      likes: 22,
-      author: "By: Aryan Khan",
-      imgSrc: "https://i.ibb.co/k0Frs9v/cardImg2.png",
-    },
-    {
-      title: "Skin Care Self Assessment",
-      plays: 18,
-      likes: 22,
-      author: "By Amrutam",
-      imgSrc: "https://i.ibb.co/JjBdf3s/cardImg3.png",
-    },
-    {
-      title: "Skin Care Self Assessment",
-      plays: 18,
-      likes: 22,
-      author: "By Amrutam",
-      imgSrc: "https://i.ibb.co/L1RRTWL/cardImg4.png",
-    },
-    {
-      title: "Skin Care Self Assessment",
-      plays: 18,
-      likes: 22,
-      author: "By Amrutam",
-      imgSrc: "https://i.ibb.co/BzjQsYk/cardImg1.png",
-    },
-    {
-      title: "Skin Care Self Assessment",
-      plays: 18,
-      likes: 22,
-      author: "By Amrutam",
-      imgSrc: "https://i.ibb.co/k0Frs9v/cardImg2.png",
-    },
-    {
-      title: "Skin Care Self Assessment",
-      plays: 18,
-      likes: 22,
-      author: "By Amrutam",
-      imgSrc: "https://i.ibb.co/L1RRTWL/cardImg4.png",
-    },
-    {
-      title: "Skin Care Self Assessment",
-      plays: 18,
-      likes: 22,
-      author: "By Amrutam",
-      imgSrc: "https://i.ibb.co/BzjQsYk/cardImg1.png",
-    },
-    {
-      title: "Skin Care Self Assessment",
-      plays: 18,
-      likes: 22,
-      author: "By Amrutam",
-      imgSrc: "https://i.ibb.co/JjBdf3s/cardImg3.png",
-    },
-    {
-      title: "Skin Care Self Assessment",
-      plays: 18,
-      likes: 22,
-      author: "By Amrutam",
-      imgSrc: "https://i.ibb.co/L1RRTWL/cardImg4.png",
-    },
-  ];
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    fetch("./QuestionnaireCards.json")
+      .then((res) => res.json())
+      .then((data) => setCards(data));
+  }, []);
   return (
     <div>
       <div className="border-[1.5px] border-[#e1e1e1] md:mx-28 mx-10 my-10 rounded-xl py-10 md:px-14 px-5">
@@ -96,8 +32,8 @@ const ListOfCards = () => {
         </div>
         {/* cards */}
         <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-5 py-5">
-          {cards?.map((card, idx) => (
-            <Cards key={idx} card={card} />
+          {cards?.map((card) => (
+            <Cards key={card?.id} card={card} />
           ))}
         </div>
       </div>

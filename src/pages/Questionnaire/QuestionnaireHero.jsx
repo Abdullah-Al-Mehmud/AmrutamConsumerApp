@@ -1,4 +1,5 @@
 import { IoArrowForwardSharp } from "react-icons/io5";
+import { IoIosArrowDown } from "react-icons/io";
 const QuestionnaireHero = () => {
   return (
     <div>
@@ -22,12 +23,13 @@ const QuestionnaireHero = () => {
               Select Type
             </h1>
             <div className="relative px-4">
-              <IoArrowForwardSharp className="absolute right-7 md:top-2/3 top-6 text-lg transform -translate-y-1/2 bg-white w-5" />
-              <input
+              <IoIosArrowDown className="absolute right-5 md:top-2/3 top-6 text-lg transform -translate-y-1/2 bg-white w-5" />
+              <select
                 type="text"
                 placeholder="Select Questionnaire Type"
-                className="md:mt-4 mt-2 px-5 lg:w-60 w-72  py-[8px] md:text-sm text-xs rounded-lg outline-none border-[1.5px] border-[#cdcdcd]"
-              />
+                className="md:mt-4 mt-2 px-5 lg:w-60 w-72 text-gray-400 py-[8px] md:text-sm text-xs rounded-lg outline-none border-[1.5px] border-[#cdcdcd]">
+                <option value="">Select Questionnaire Type</option>
+              </select>
             </div>
           </div>
         </div>
