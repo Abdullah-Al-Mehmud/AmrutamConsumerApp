@@ -1,14 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Cards from "./Cards";
+import { QuestionnaireContext } from "../../../Context/QuestionnaireContext/QuestionnaireProvider";
 
 const ListOfCards = () => {
   const [cards, setCards] = useState([]);
+  const { selectedType } = useContext(QuestionnaireContext);
 
   useEffect(() => {
     fetch("./QuestionnaireCards.json")
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
+
+  const filteredData =
+    selectedType === "All"
+      ? cards
+      : cards.filter((card) => card.type === selectedType);
   return (
     <div>
       <div className="border-[1.5px] border-[#e1e1e1] md:mx-28 mx-10 my-10 rounded-xl py-10 md:px-14 px-5">
@@ -32,7 +39,7 @@ const ListOfCards = () => {
         </div>
         {/* cards */}
         <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-5 py-5">
-          {cards?.map((card) => (
+          {filteredData?.map((card) => (
             <Cards key={card?.id} card={card} />
           ))}
         </div>

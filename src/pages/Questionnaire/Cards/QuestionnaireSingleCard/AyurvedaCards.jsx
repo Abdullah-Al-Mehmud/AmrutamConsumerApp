@@ -2,9 +2,12 @@ import PropTypes from "prop-types";
 import like from "../../../../assets/likeWithbg.png";
 import play from "../../../../assets/playWithbg.png";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { QuestionnaireContext } from "../../../../Context/QuestionnaireContext/QuestionnaireProvider";
 
 const AyurvedaCards = ({ cardDetails }) => {
-  const { imgSrc, title, plays, likes } = cardDetails;
+  const { selectedType } = useContext(QuestionnaireContext);
+  const { imgSrc, title, plays, likes, type } = cardDetails;
   return (
     <div className="flex justify-center items-center border-[1.5px] border-gray-200 py-10 md:mx-28 mx-10 my-10 rounded-xl ">
       <div className="p-10 rounded-lg overflow-hidden lg:flex ">
@@ -37,11 +40,19 @@ const AyurvedaCards = ({ cardDetails }) => {
             </div>
           </div>
           <div className="mt-14">
-            <NavLink to="/selfAssessmentQuestions">
-              <button className=" bg-[#3a643b] text-white font-semibold py-3 md:px-36 px-24 rounded-lg  whitespace-nowrap">
-                Play Now
-              </button>
-            </NavLink>
+            {type === "Self Assessment" ? (
+              <NavLink to="/selfAssessmentQuestions">
+                <button className=" bg-[#3a643b] text-white font-semibold py-3 md:px-36 px-24 rounded-lg  whitespace-nowrap">
+                  Play Now
+                </button>
+              </NavLink>
+            ) : (
+              <NavLink to="/triviaQuestions">
+                <button className=" bg-[#3a643b] text-white font-semibold py-3 md:px-36 px-24 rounded-lg  whitespace-nowrap">
+                  Play Now
+                </button>
+              </NavLink>
+            )}
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import Questionnaire from "./pages/Questionnaire/Questionnaire";
 import QuestionnaireSingleCard from "./pages/Questionnaire/Cards/QuestionnaireSingleCard/QuestionnaireSingleCard";
 import SelfAssessmentQuestions from "./pages/Questionnaire/Cards/QuestionnaireSingleCard/SelfAssessmentQuestions/SelfAssessmentQuestions";
 import SelfAssessmentResult from "./pages/Questionnaire/Cards/QuestionnaireSingleCard/SelfAssessmentQuestions/SelfAssessmentResult/SelfAssessmentResult";
+import TriviaQuestions from "./pages/Questionnaire/Cards/QuestionnaireSingleCard/TriviaQuestions/TriviaQuestions";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "/selfAssessmentResult",
     element: <SelfAssessmentResult />,
+  },
+  {
+    path: "/triviaQuestions",
+    element: <TriviaQuestions />,
   },
 ]);
 
