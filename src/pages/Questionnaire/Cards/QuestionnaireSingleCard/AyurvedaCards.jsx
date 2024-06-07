@@ -2,11 +2,8 @@ import PropTypes from "prop-types";
 import like from "../../../../assets/likeWithbg.png";
 import play from "../../../../assets/playWithbg.png";
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { QuestionnaireContext } from "../../../../Context/QuestionnaireContext/QuestionnaireProvider";
 
 const AyurvedaCards = ({ cardDetails }) => {
-  const { selectedType } = useContext(QuestionnaireContext);
   const { imgSrc, title, plays, likes, type } = cardDetails;
   return (
     <div className="flex justify-center items-center border-[1.5px] border-gray-200 py-10 md:mx-28 mx-10 my-10 rounded-xl ">
