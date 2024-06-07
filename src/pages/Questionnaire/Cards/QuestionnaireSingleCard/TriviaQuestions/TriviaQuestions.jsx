@@ -6,10 +6,12 @@ import { IoArrowBackOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ProgressBar from "../SelfAssessmentQuestions/ProgressBar";
+import { ImCross } from "react-icons/im";
 const TriviaQuestions = () => {
   const [progress, setProgress] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [feedback, setFeedback] = useState("");
   const navigate = useNavigate();
 
   const questions = [
@@ -20,6 +22,7 @@ const TriviaQuestions = () => {
         "Medium build, Average activity",
         "Stocky build, Less active",
       ],
+      correctAnswer: "Slender, Light build, Active",
     },
     {
       question: "How would you describe your diet?",
@@ -28,6 +31,7 @@ const TriviaQuestions = () => {
         "High protein and low carb",
         "Mostly fast food and snacks",
       ],
+      correctAnswer: "Balanced with fruits and vegetables",
     },
     {
       question: "How do you usually sleep?",
@@ -36,6 +40,7 @@ const TriviaQuestions = () => {
         "Interrupted and light",
         "Short and insufficient",
       ],
+      correctAnswer: "Deep and restful",
     },
     {
       question: "What is your usual energy level throughout the day?",
@@ -44,6 +49,7 @@ const TriviaQuestions = () => {
         "Fluctuates with energy drops",
         "Low and tired often",
       ],
+      correctAnswer: "High and consistent",
     },
   ];
 
@@ -51,9 +57,19 @@ const TriviaQuestions = () => {
     if (currentQuestionIndex < questions.length) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setProgress(((currentQuestionIndex + 1) / questions.length) * 100);
-      setSelectedOption(null); // Clear the selected option for the next question
+      setSelectedOption(null);
+      setFeedback("");
     } else {
       setProgress(100); // Set progress to 100% on the last question
+    }
+  };
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+    if (option === questions[currentQuestionIndex].correctAnswer) {
+      setFeedback("Correct Answer");
+    } else {
+      setFeedback("Wrong Answer");
     }
   };
 
@@ -62,11 +78,11 @@ const TriviaQuestions = () => {
       Swal.fire({
         position: "center",
         icon: "success",
-        title: "You Successfully Completed Your Self Assessment",
+        title: "You Successfully Completed Trivia Questions",
         showConfirmButton: false,
         timer: 1500,
       });
-      navigate("/selfAssessmentResult");
+      navigate("/triviaResult");
     }
   }, [progress, navigate]);
 
@@ -109,13 +125,26 @@ const TriviaQuestions = () => {
         {questions[currentQuestionIndex]?.options?.map((option, index) => (
           <button
             key={index}
-            className={`w-full py-2 border md:mt-0 mt-4  rounded-lg text-center hover:bg-gray-100 transition ${selectedOption === option ? "text-[#3a643b] font-bold border-[1.5px] border-[#3a643b] " : "border-gray-300"}`}
-            onClick={() => setSelectedOption(option)}>
+            className={`w-full py-2 border md:mt-0 mt-4  rounded-lg text-center hover:bg-gray-100 transition ${selectedOption === option ? (option === questions[currentQuestionIndex].correctAnswer ? "text-[#3a643b] font-bold border-[1.5px] border-[#3a643b] " : "text-[#b00000] font-bold border-[1.5px] border-[#b00000]") : "border-gray-300"}`}
+            onClick={() => handleOptionSelect(option)}>
             {option}
           </button>
         ))}
       </div>
-      {/* <div className="flex md:justify-end justify-center pb-10 lg:mr-0 md:mr-10">
+      <div className="text-center my-4 text-lg font-semibold">
+        {feedback && (
+          <p
+            className={
+              feedback === "Correct Answer"
+                ? "text-[#3a643b]"
+                : "text-[#b00000]"
+            }>
+            {feedback}
+          </p>
+        )}
+      </div>
+
+      <div className="flex md:justify-end justify-center pb-10 lg:mr-0 md:mr-10">
         <button
           onClick={nextQuestion}
           className={`mt-6 font-semibold py-3 px-20 rounded-lg transition ${!selectedOption ? "bg-[#e6e6e6] text-white cursor-not-allowed" : "bg-[#3a643b] text-white"}`}
@@ -124,7 +153,7 @@ const TriviaQuestions = () => {
             ? "Complete Quiz"
             : "Next Question"}
         </button>
-      </div> */}
+      </div>
     </div>
   );
 };
