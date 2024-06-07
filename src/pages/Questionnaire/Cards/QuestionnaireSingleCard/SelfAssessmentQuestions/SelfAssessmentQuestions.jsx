@@ -64,7 +64,7 @@ const SelfAssessmentQuestions = () => {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="flex items-center justify-between py-10">
+      <div className="flex items-center justify-between py-10 lg:px-0 px-5">
         <div>
           <img src={amrutam} alt="Logo" />
         </div>
@@ -79,42 +79,44 @@ const SelfAssessmentQuestions = () => {
         </div>
       </div>
       <div>
-        <h1 className="font-semibold text-xl tracking-wider">
+        <h1 className="font-semibold text-xl tracking-wider md:text-left text-center lg:px-0 px-5">
           Mental Health Quiz
         </h1>
       </div>
-      <div className="py-10">
+      <div className="py-10 lg:px-0 px-5">
         <ProgressBar progress={progress} />
         <p className="text-center mt-4">{Math.round(progress)}%</p>
       </div>
 
-      <p className="flex items-center gap-2 text-lg font-semibold">
+      <p className="flex items-center gap-2 text-lg font-semibold lg:ml-0 ml-10">
         <IoArrowBackOutline />
         Go Back
       </p>
 
-      <p className="text-lg font-semibold text-gray-700">
+      <p className="text-lg font-semibold text-gray-700 mt-6 md:text-left text-center lg:ml-0 md:ml-10">
         {questions[currentQuestionIndex]?.question}
       </p>
 
-      <div className="mt-4 space-y-2">
+      <div className="my-10 md:flex items-center gap-12 lg:mx-0 mx-10 ">
         {questions[currentQuestionIndex]?.options?.map((option, index) => (
           <button
             key={index}
-            className={`w-full py-2 border border-gray-300 rounded-lg text-center hover:bg-gray-100 transition ${selectedOption === option ? "bg-gray-200" : ""}`}
+            className={`w-full py-2 border md:mt-0 mt-4  rounded-lg text-center hover:bg-gray-100 transition ${selectedOption === option ? "text-[#3a643b] font-bold border-[1.5px] border-[#3a643b] " : "border-gray-300"}`}
             onClick={() => setSelectedOption(option)}>
             {option}
           </button>
         ))}
       </div>
-      <button
-        onClick={nextQuestion}
-        className={`mt-6 w-full font-semibold py-2 px-4 rounded-lg transition ${!selectedOption ? "bg-gray-300 text-gray-600 cursor-not-allowed" : "bg-green-500 text-white"}`}
-        disabled={!selectedOption}>
-        {currentQuestionIndex >= questions.length
-          ? "Complete Quiz"
-          : "Next Question"}
-      </button>
+      <div className="flex md:justify-end justify-center pb-10 lg:mr-0 md:mr-10">
+        <button
+          onClick={nextQuestion}
+          className={`mt-6 font-semibold py-3 px-20 rounded-lg transition ${!selectedOption ? "bg-[#e6e6e6] text-white cursor-not-allowed" : "bg-[#3a643b] text-white"}`}
+          disabled={!selectedOption}>
+          {currentQuestionIndex >= questions.length
+            ? "Complete Quiz"
+            : "Next Question"}
+        </button>
+      </div>
     </div>
   );
 };
