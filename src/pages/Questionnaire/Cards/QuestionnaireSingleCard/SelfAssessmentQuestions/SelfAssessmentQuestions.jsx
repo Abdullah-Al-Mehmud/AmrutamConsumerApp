@@ -4,6 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 import ProgressBar from "./ProgressBar";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const SelfAssessmentQuestions = () => {
   const [progress, setProgress] = useState(0);
@@ -58,6 +59,13 @@ const SelfAssessmentQuestions = () => {
 
   useEffect(() => {
     if (progress === 100) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "You Successfully Completed Your Self Assessment",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       navigate("/selfAssessmentResult");
     }
   }, [progress, navigate]);
