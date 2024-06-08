@@ -6,7 +6,7 @@ import { IoArrowBackOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ProgressBar from "../SelfAssessmentQuestions/ProgressBar";
-import { ImCross } from "react-icons/im";
+
 const TriviaQuestions = () => {
   const [progress, setProgress] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
