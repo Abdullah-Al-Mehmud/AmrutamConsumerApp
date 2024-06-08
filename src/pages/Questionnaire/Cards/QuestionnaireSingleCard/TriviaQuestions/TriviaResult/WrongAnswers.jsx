@@ -9,7 +9,7 @@ const WrongAnswers = () => {
           <p className="mb-4 text-lg font-semibold text-gray-800">
             What best describes Ayurveda?
           </p>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 font-semibold">
             <button className="w-full py-2 text-[#3a643b] border border-[#3a643b] rounded-lg focus:outline-none">
               Slender, Light build, Active
             </button>
